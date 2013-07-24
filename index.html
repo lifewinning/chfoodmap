@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title></title>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <style>
+      #map { 
+        position:absolute; top:0;bottom:0; width:100%;z-index:97;
+      }  
+
+      .marker-tooltip h1{
+        font-family: 'PT Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+      } 
+
+      .marker-tooltip p {
+        font-size: 14px;
+        font-family: 'PT Sans', sans-serif;
+        font-weight: 400;
+      }
+      .marker-tooltip a{
+        text-decoration: none;
+        color: #FCA400;
+      }
+      .marker-popup{
+        -moz-border-radius: 10%;
+        border-radius: 10%;
+
+      }
+
+</style>
+  </head>
+  <body>
+
+
+<!-- Section: Map -->
+   
+<div id='map'>
+
+</div>
+
+    <script src='https://www.google.com/jsapi'></script>
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
+    <script src='ext/jquery.min.js'></script>
+    <script src='ext/underscore.min.js'></script>
+    <script src='ext/google_docs.js'></script>
+    <script src='site.js'></script>
+  </body>
+</html>
