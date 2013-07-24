@@ -4,7 +4,7 @@ function mmg_google_docs_spreadsheet(id, sheet, callback) {
     if (typeof reqwest === 'undefined'){
         throw 'CSV: reqwest required for mmg_csv_url';
     }
-
+//sets up url for feed of spreadsheet data--make sure to both "share" spreadsheet and "publish to web" in the GUI
     var url = 'https://spreadsheets.google.com/feeds/list/' + id +
         '/' + sheet + '/public/values?alt=json-in-script&callback=callback';
     reqwest({
@@ -39,11 +39,10 @@ function mmg_google_docs_spreadsheet(id, sheet, callback) {
                 // identify what's in the spreadsheet to convert to JSON properties
                 properties: {
                     'marker-color':'#fff',
-                    'marker-size':'medium',
-                
+                    'marker-size':'small',
                     'title': entry['gsx$address'],
                     'type': entry['gsx$type'],
-                    'tenants':entry['gsx$tenants']
+                    'info':entry['gsx$info']
                          
                 }
             };
