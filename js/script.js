@@ -19,7 +19,7 @@
   		;
   		Sheetsee.addTileLayer(map, "lifewinning.map-7nibzgui");
 
-  		var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 14);
+  		var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 13);
 
   		//popups
   		addPopups(map, markerLayer);
