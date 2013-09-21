@@ -12,24 +12,43 @@
 		// making data into a geoJSON
 		var featureElements = ['title', 'address', 'contact', 'info'];
   		var geoJSON = Sheetsee.createGeoJSON(gData, featureElements);
-  
+  		console.log(geoJSON);
   		
   		//declaring the map
   		var map = Sheetsee.loadMap("map")
   		;
   		Sheetsee.addTileLayer(map, "lifewinning.map-7nibzgui");
 
-  		var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 12);
+  		var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 13);
 
   		//popups
   		addPopups(map, markerLayer);
 		function addPopups(map, markerLayer) {
  		markerLayer.on('click', function(e) {
     		var feature = e.layer.feature
- 	 		var popupContent = '<h2>' + feature.opts.title + '</h2>' +
+    	if (feature.opts.info == "" && feature.opts.contact !== ""){
+ 	 		var popupContent ='<h2>' + feature.opts.title + '</h2>' +
 	                    '<h3>' + feature.opts.address + '</h3><p id="infos">' +
-	                    feature.opts.contact + '</p><p id="infos">'+ feature.opts.info;
+	                    feature.opts.contact + '</p>';
+	        }
+	    else if (feature.opts.contact == "" && feature.opts.info !== ""){
+ 	 		var popupContent = '<h2>' + feature.opts.title + '</h2>' +
+	                    '<h3>' + feature.opts.address + '</h3></p><p id="infos">'+ feature.opts.info;
+	        }
+	    else if (feature.opts.contact == "" && feature.opts.info == ""){
+ 	 		var popupContent = '<h2>' + feature.opts.title + '</h2>' +
+	                    '<h3>' + feature.opts.address + '</h3>';
+	        }
+
+	    else {
+	    	var popupContent = '<h2>' + feature.opts.title + '</h2>' +
+	                    '<h3>' + feature.opts.address + '</h3></p><p id="infos">'+ feature.opts.contact + '</p><p id="infos">' +feature.opts.info;
+	    
+	        }
+	    
+	    if (true) {};
 		e.layer.bindPopup(popupContent,{closeButton: false,})
+		//map.panTo(e.layer.getLatLng()); 
 	 	})
 	 	 document.getElementById('mapsidebar').onclick = function(n) {
     	var pos = n.target.getAttribute('data-position');
