@@ -1,3 +1,5 @@
+  // seriously David before you touch any of this please tell me. 
+
   document.addEventListener('DOMContentLoaded', function() {
   	var gData;
   	var URL = "0AkuokbMVYNRxdHFTc2k1OG9EZkZ6SlVaeEhRUlZLYlE"
