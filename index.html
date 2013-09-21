@@ -1,52 +1,66 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8' />
-    <title></title>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' rel='stylesheet' />
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-    <style>
-      #map { 
-        position:absolute; top:0;bottom:0; width:100%;z-index:100;
-      }  
-
-      .marker-tooltip h1{
-        font-family: 'PT Sans', sans-serif;
-        font-size: 18px;
-        font-weight: 700;
-      } 
-
-      .marker-tooltip p {
-        font-size: 14px;
-        font-family: 'PT Sans', sans-serif;
-        font-weight: 400;
-      }
-      .marker-tooltip a{
-        text-decoration: none;
-        color: #FCA400;
-      }
-      .marker-popup{
-        -moz-border-radius: 10%;
-        border-radius: 10%;
-
-      }
-
-</style>
-  </head>
-  <body>
+	<head>
+		<title>Central Brooklyn Food Resources and Community Gardens</title>
+		<script type="text/javascript" src="js/ICanHaz.js"></script> 
+		<script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+		<script src='js/jquery.js '></script>
+		<script type="text/javascript" src='js/d3.js'></script>
+		<script type="text/javascript" src='js/tabletop.js'></script>
+		<script type="text/javascript" src='js/sheetsee.js'></script>
+		
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.css' rel='stylesheet' />
+		<link rel="stylesheet" type="text/css" href="css/style.css"> 
+		<!-- <link rel="stylesheet" type="text/css" href="css/site.css"> --> 
 
 
-<!-- Section: Map -->
-   
-<div id='map'>
+	</head>
 
+<body>
+<div id="mapsidebar">
+<ul id ="header">
+	<h1>Central Brooklyn Food Resource Map</h1>
+	<p>Scroll down to view different food resources in the neighborhood! Click on items in the list to zoom in, or click on the markers to learn more!</p>
+</ul>
+<ul id="communitygarden"></ul>
+<ul id="csa"></ul>
+<ul id="farmersmarket"></ul>
+<ul id ="foodsec"></ul></div>
 </div>
 
-    <script src='https://www.google.com/jsapi'></script>
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
-    <script src='ext/jquery.min.js'></script>
-    <script src='ext/underscore.min.js'></script>
-    <script src='ext/google_docs.js'></script>
-    <script src='site.js'></script>
-  </body>
+<!-- scripts that generate data into the list of locations -->
+<script id="communitygarden" type="text/html">
+ <p>Community Gardens</p>
+  {{#rows}}
+   <li><a href="#" data-position ='{{lat}},{{long}}'>{{title}}</li> 
+  {{/rows}}
+</script>
+
+<script id="csa" type="text/html">
+ <p>Community-Supported Agriculture</p>
+  {{#rows}}
+   <li><a href="#" data-position ='{{lat}},{{long}}'>{{title}}</li>
+  {{/rows}}
+</script>
+
+<script id="farmersmarket" type="text/html">
+ <p>Farmers Markets</p>
+  {{#rows}}
+    <a href="#" data-position ='{{lat}},{{long}}'>{{title}}</li>  
+  {{/rows}}
+</script>
+
+<script id="foodsec" type="text/html">
+ <p>Food Pantries and Soup Kitchens</p>
+  {{#rows}}
+  <li><a href="#" data-position ='{{lat}},{{long}}'>{{title}}</a></li>
+  {{/rows}}
+</script>
+
+
+<div id="map"></div>
+
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
 </html>

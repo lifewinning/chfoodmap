@@ -46,7 +46,7 @@ function mapData(f) {
     map.ui.zoombox.add();
 
     interaction.formatter(function (feature) {
-        var o = '<h1>' + feature.properties.title + '</h1><p>' + feature.properties.address + '</p>';
+        var o = '<h1>' + feature.properties.title + '</h1><p>' + feature.properties.address + '</p><br><p id="infos">' + feature.properties.contact + '</p><p id="infos">' + feature.properties.info + '</p>';
         return o;
     });
 

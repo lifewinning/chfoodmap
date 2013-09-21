@@ -1,0 +1,121 @@
+
+    h1 {
+  font-family: "chaparral-pro";
+  }
+  body, html {
+	  overflow: hidden;
+  }
+  
+      #map { 
+        position:absolute;
+        top:0;
+        left: -5px;
+        bottom:0;
+        width:100%;
+        z-index:2;
+        margin: 0;
+      }  
+
+	/* Container for list of locations  ----------- */
+	  #mapsidebar {
+	  	position: absolute;
+	  	overflow-y: scroll;
+	  	  top: 25px;
+		  width: 300px;
+		  height: 900px;
+		  padding: 6px;
+		  padding-left: 2px;
+		  /*background: #EBEBEB;*/
+		  z-index: 9999999;
+		
+	  }
+	/* Catch-all for list styles of locations  ----------- */
+	  ul {
+		 border-radius: 5px;
+		 list-style:  circle;
+		 color: white;
+		 font-family: helvetica neue;
+		 padding: 8px;
+		 padding-left: 22px;
+		 font-size: .8em;
+		 line-height: 2.2em;
+	  }
+	 	/* Style for header of location lists  ----------- */ 
+	  ul p {
+		  text-align: center;
+		  font-size: 1.3em;
+		  line-height: .3;
+		  font-weight: bold;
+	  }
+	 	/* Location list background colors  ----------- */ 
+	 .csa {
+		 background: rgba(26, 197, 223, 1);
+	 }
+	 .foodsec {
+		 background: rgba(242, 84, 48, 1)
+	 }
+	 .schoolgarden {
+		 background: rgba(76, 137, 68, 1)
+	 }
+	 .communitygarden {
+		 background: rgba(5, 156, 29, 1)
+	 }
+	 .farmersmarket {
+		 background: rgba(138, 62, 185, 1)
+	 }
+	 .schoolgarden {
+		 background: rgba(149, 218, 30, 1)
+	 }
+	 
+	/* Tooltip type styles  ----------- */
+      
+      .marker-tooltip h1{
+		font-family: "helvetica";
+        font-size: 1.2em;
+        font-weight: bold;
+        color: black;
+        line-height: 1.6;
+      } 
+
+      .marker-tooltip p {
+        font-size: .8em;
+        font-family: 'helvetica', sans-serif;
+        font-weight: 400;
+        color: black;
+
+      }
+      .marker-tooltip a{
+        text-decoration: none;
+        color: #FCA400;
+      }
+      	/* Tooltip contact and info style  ----------- */
+      #infos {
+	      color: black;
+	      background: #EBEBEB;
+	      width: 93%;
+	      text-align: left;
+	      padding: 1em;
+	      line-height: 1.5;
+      }
+      	/* Marker container styles ----------- */
+      .marker-popup{
+      
+        -moz-border-radius: 10%;
+        border-radius: 10%;
+
+      }
+
+	.marker-popup {
+		border-radius: 2px;
+		border: 1px solid #ccc;
+		width: 350px;
+	}
+
+	/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 10px) 
+and (max-device-width : 600px) {
+	      
+	      
+	      	
+}
