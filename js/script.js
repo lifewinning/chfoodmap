@@ -21,7 +21,7 @@
 
   		var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 13);
 
-  		//popups
+  	//popups
   		addPopups(map, markerLayer);
 		function addPopups(map, markerLayer) {
  		markerLayer.on('click', function(e) {
@@ -50,11 +50,14 @@
 		e.layer.bindPopup(popupContent,{closeButton: false,})
 		//map.panTo(e.layer.getLatLng()); 
 	 	})
-	 	 document.getElementById('mapsidebar').onclick = function(n) {
+
+//sidebar click function
+	 document.getElementById('mapsidebar').onclick = function(n) {
     	var pos = n.target.getAttribute('data-position');
     	if (pos) {
         var loc = pos.split(',');
         map.setView(loc, 15);
+
     	}
     }
 	}
